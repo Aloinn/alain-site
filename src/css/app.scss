@@ -1,4 +1,24 @@
 // app global css in SCSS form
 .container {
-  max-width: 1000px;
+  max-width: 1100px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+.link {
+  -webkit-transition: ease-out 0.2s;
+  -moz-transition: ease-out 0.2s;
+  transition: ease-out 0.2s;
+  box-shadow: 0px 0px 0 0 black;
+}
+.link:hover {
+  box-shadow: 0px 2px 0 0 lightgrey;
+}
+
+@media (max-width: 1130px) {
+  .container {
+    padding: 0px 20px;
+  }
 }

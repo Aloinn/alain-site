@@ -13,11 +13,11 @@
 }
 .fn-md {
   font-size: 14pt;
-  line-height: 22pt;
+  line-height: 18pt;
 }
 .fn-sm {
   font-size: 12pt;
-  line-height: 22pt;
+  line-height: 14pt;
 }
 .fn-xs {
   font-size: 10pt;
@@ -35,8 +35,14 @@
 .fn-w-bold {
   font-weight: bold;
 }
+.fn-w-dark {
+  font-weight: 500;
+}
 .fn-w-light {
   font-weight: 400;
+}
+.fn-w-thin {
+  font-weight: 300;
 }
 .fn-link {
   text-decoration: none;

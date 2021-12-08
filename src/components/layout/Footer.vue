@@ -1,7 +1,6 @@
 <template>
-  <div class="bg-green">
-    <h1 class="fn-xl q-my-none">aloinn</h1>
-    <div class="fn-md">[ alain nguyen ]</div>
+  <div class="container q-mt-lg q-mx-auto q-py-lg">
+    <div class="fn-md fn-w-thin">Copyright © Alain Nguyen 2021.</div>
   </div>
 </template>
 

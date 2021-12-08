@@ -1,14 +1,16 @@
 <template>
   <Header />
   <router-view />
+  <Footer />
 </template>
 
 <script lang="ts">
-import Header from 'src/components/Header/Header.vue';
+import Footer from 'src/components/layout/Footer.vue';
+import Header from 'src/components/layout/Header.vue';
 import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
-  components: { Header },
+  components: { Header, Footer },
   name: 'MainLayout',
 
   setup() {
