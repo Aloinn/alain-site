@@ -1,0 +1,47 @@
+.fn-xxl {
+  font-size: 60pt;
+  line-height: 60pt;
+}
+.fn-xl {
+  font-size: 37pt;
+  line-height: 34pt;
+}
+
+.fn-lg {
+  font-size: 18pt;
+  line-height: 22pt;
+}
+.fn-md {
+  font-size: 14pt;
+  line-height: 22pt;
+}
+.fn-sm {
+  font-size: 12pt;
+  line-height: 22pt;
+}
+.fn-xs {
+  font-size: 10pt;
+  line-height: 14pt;
+}
+
+.fn-big {
+  font-family: GrandSlang;
+}
+
+.fn-no-mp {
+  margin: 0;
+  padding: 0;
+}
+.fn-w-bold {
+  font-weight: bold;
+}
+.fn-w-light {
+  font-weight: 400;
+}
+.fn-link {
+  text-decoration: none;
+  cursor: pointer;
+}
+.fn-link:hover {
+  text-decoration: underline;
+}
