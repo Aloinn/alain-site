@@ -8,34 +8,22 @@
         v-for="project in projects"
         :key="project.name"
       >
-        <a :href="project.url">
+        <a :href="project.url" @click="log(project.name)">
           <q-item v-ripple clickable class="q-pa-none thumbnail">
             <q-img class="q-pa-none" :src="project.img">
               <div class="nobg fit row">
                 <div
-                  class="
-                    bg-white
-                    thumbnailtext
-                    q-mx-auto q-my-auto q-pa-md-xs q-pa-lg
-                  "
+                  class="bg-white thumbnailtext q-mx-auto q-my-auto q-pa-md-xs q-pa-lg"
                 >
                   <h3
-                    class="
-                      text-black
-                      fn-w-bold
-                      text-center
-                      q-mt-md q-mb-none q-px-sm-xl
-                    "
+                    class="text-black fn-w-bold text-center q-mt-md q-mb-none q-px-sm-xl"
                   >
                     {{ project.name }}
                   </h3>
                   <div class="text-center q-mb-sm-md q-mb-sm">
-                    <subtitle
-                      class="text-grey fn-w-light"
-                      v-if="project.subtitle"
-                    >
+                    <div class="text-grey fn-w-light" v-if="project.subtitle">
                       {{ project.subtitle }}
-                    </subtitle>
+                    </div>
                     <div>
                       <q-badge
                         color="orange"
@@ -108,11 +96,19 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
 import { Project } from 'src/data/data';
+import { getAnalytics, logEvent } from 'firebase/analytics';
 
 export default defineComponent({
   props: {
     label: String,
     projects: Object as PropType<Project[]>,
+  },
+  setup() {
+    const log = (name: string) => {
+      const analytics = getAnalytics();
+      logEvent(analytics, 'event_click', { destination: name });
+    };
+    return { log };
   },
 });
 </script>

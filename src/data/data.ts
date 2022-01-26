@@ -5,7 +5,15 @@ export const professionalProjectsList: Project[] = [
     url: 'https://artblock-com.web.app/',
     subtitle: 'Global Creative Technologies',
     description:
-      'Art Block is a secure platform for exhibiting and collecting fine art digital assets',
+      'ArtBlock is a secure platform for exhibiting and collecting fine art digital assets',
+  },
+  {
+    name: 'Renegade Tickets',
+    img: 'images/renegade.png',
+    url: 'https://renegade-tickets.web.app/',
+    subtitle: 'Global Creative Technologies',
+    description:
+      'Renegade Tickets is a token based ticket trading platform for raves and festivals',
   },
   {
     name: 'BallStreet Cards',

@@ -1,7 +1,9 @@
 <template>
-  <div class="fit row q-pt-xl">
-    <div class="q-gutter-y-md col">
-      <div class="fn-xl fn-w-dark">Hey!</div>
+  <div class="row q-pt-xl">
+    <div class="q-gutter-y-lg q-mx-auto col-md col-none">
+      <div class="fn-xl fn-w-dark row justify-md-start justify-center">
+        <div>Hey! 👋</div>
+      </div>
       <div>
         <p class="fn-md fn-w-thin">
           I'm <strong class="fn-w-dark">Alain Nguyen</strong>, Software
@@ -17,7 +19,7 @@
       </div>
       <div>
         <p class="fn-md fn-w-thin">
-          I am very fluent in
+          I am fluent in
           <span class="fn-w-dark text-white bg-red q-px-xs rounded-borders"
             >Java</span
           >,
@@ -34,39 +36,44 @@
       </div>
       <div>
         <p class="fn-md fn-w-thin">
-          Sometimes you can catch me at the local hackathon or game jam
+          You can usually catch me at the local hackathon or game jam
         </p>
       </div>
 
       <div>
         <p class="fn-md fn-w-thin">
-          I am currently a
-          <strong class="fn-w-dark">Software Engineering Team Lead </strong>
-          intern at
-          <a class="fn-w-dark" href="https://www.gcto.ca/"
-            ><q-chip dense class="fn-md" clickable square
-              >Global Creative Technologies</q-chip
-            ></a
-          >
+          When I'm not working or studying, I'm either jazz improv'ing on my
+          strat, challenging the local park's ping pong champions, or hosting
+          board games in my basement 🎸
         </p>
       </div>
     </div>
-    <div>
-      <q-avatar size="200px"><q-img src="images/profile-pic.png" /></q-avatar>
-      <div class="row full-width q-mt-sm">
-        <a class="col" href="https://www.linkedin.com/in/aloinn">
-          <q-btn dense size="xl" unelevated round icon="ion-logo-linkedin" />
-        </a>
-        <a class="col" href="https://www.instagram.com/Aloin.n/">
-          <q-btn dense size="xl" unelevated round icon="ion-logo-instagram" />
-        </a>
-        <a class="col" href="https://github.com/Aloinn">
-          <q-btn dense size="xl" unelevated round icon="ion-logo-github" />
-        </a>
+
+    <div class="order-first order-md-last col-md-auto col-12 q-my-lg">
+      <div class="profile q-mx-auto">
+        <q-avatar size="200px"><q-img src="images/profile-pic.png" /></q-avatar>
+        <div class="row q-mt-sm justify-between">
+          <a href="https://www.linkedin.com/in/aloinn">
+            <q-btn dense size="xl" unelevated round icon="ion-logo-linkedin" />
+          </a>
+          <a chref="https://www.instagram.com/Aloin.n/">
+            <q-btn dense size="xl" unelevated round icon="ion-logo-instagram" />
+          </a>
+          <a href="https://github.com/Aloinn">
+            <q-btn dense size="xl" unelevated round icon="ion-logo-github" />
+          </a>
+        </div>
       </div>
+      <q-separator class="q-my-md lt-md" size="3px" />
     </div>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.profile {
+  width: 200px;
+}
+</style>
 
 <script lang="ts">
 import { defineComponent } from 'vue';

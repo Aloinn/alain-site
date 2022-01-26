@@ -1,0 +1,78 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    match /services/{services} {
+      allow read: if true;
+      allow write: if request.auth.token.admin;
+    }
+    match /events/{services} {
+      allow read: if true;
+      allow write: if request.auth.token.admin;
+    }
+    match /articles/{services} {
+      allow read: if true;
+      allow write: if request.auth.token.admin;
+    }
+    
+    match /appointments/{appointment} {
+			allow read: if true;
+      allow write: if true;
+    }
+    match /public_appointments/{public_appointmentsId} {    
+      allow read: if true;
+      allow write: if true;
+    }
+    match /blog_posts/{blogpost} {    
+      allow read: if true;
+      allow write: if request.auth.token.admin || request.auth.token.coach
+    }
+    
+    match /users/{uid} {
+      allow read: if true;
+      allow write: if request.auth.uid == uid || request.auth.token.admin;
+    }
+    
+    match /users/{uid}/moods/{date} {
+      allow read: if true;
+      allow write: if request.auth.uid == uid;
+    }
+    
+    match /users/{uid}/badges/{badge} {
+      allow read: if true;
+      allow write: if request.auth.uid == uid;
+    }
+    
+    match /users/{uid}/conversations/{conversationid} {
+      allow read: if request.auth.uid == uid;
+      allow write: if true;
+    }
+    
+    match /conversations/{convo} {
+    	allow read: if request.auth.uid in resource.data.users
+    }
+    
+    match /stripe_customers/{uid} {
+      allow read: if request.auth.uid == uid;
+
+      match /checkout_sessions/{id} {
+        allow read, write: if request.auth.uid == uid;
+      }
+      match /subscriptions/{id} {
+        allow read: if request.auth.uid == uid;
+      }
+    }
+
+    match /stripe_products/{id} {
+      allow read: if true;
+
+      match /prices/{id} {
+        allow read: if true;
+      }
+
+      match /tax_rates/{id} {
+        allow read: if true;
+      }
+    }
+  }
+}
